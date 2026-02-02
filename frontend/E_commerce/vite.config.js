@@ -1,6 +1,7 @@
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
 import { defineConfig } from "vite";
+import tailwindcss from '@tailwindcss/vite'
 import react from "@vitejs/plugin-react-swc";
 
 // Declaring __dirname Manually
@@ -8,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default defineConfig({
-    plugins: [react()],
+    plugins: [react(), tailwindcss(),],
     server: {
         allowedHosts: ["unmeasuredly-unplentiful-lynsey.ngrok-free.dev"],
     },
@@ -21,6 +22,7 @@ export default defineConfig({
             "@utils": resolve(__dirname, "src/utils"),
             "@context": resolve(__dirname, "src/context"),
             "@hooks": resolve(__dirname, "src/hooks"),
+            "@themes": resolve(__dirname, "src/themes"),
         },
     },
 });
