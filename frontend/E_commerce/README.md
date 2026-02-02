@@ -1,4 +1,4 @@
-# E-commerce website
+# E-commerce
 
 ```
 ├── src
