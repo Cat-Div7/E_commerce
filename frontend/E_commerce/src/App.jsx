@@ -1,10 +1,11 @@
-import './App.css'
+import { Button } from '@mui/material'
 
 function App() {
-
   return (
-    <div>
+    <div className="text-center text-2xl font-bold">
       Zinggy
+      <br />
+      <Button variant="contained">Hello MUI</Button>
     </div>
   )
 }
