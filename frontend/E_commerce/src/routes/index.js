@@ -1,2 +1,2 @@
 export * from './ProtectedRoute'
-export * from './GuessRoute'
+export * from './GuestRoute'
