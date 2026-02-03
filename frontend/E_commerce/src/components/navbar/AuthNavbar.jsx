@@ -8,11 +8,11 @@ import {
   Container,
   Link,
 } from '@mui/material'
-import { Logo , NavLinks} from '@components'
+import { Logo, NavLinks } from '@components'
 
 export function AuthNavbar({ showLogin, showRegister }) {
   const navLinks = [
-    { label: 'Home', to: '/' },
+    { label: 'Home', to: '/', end: true },
     { label: 'Shop', to: '/shop' },
     { label: 'About', to: '/about' },
   ]

@@ -1,20 +1,23 @@
-import { Box, Link } from '@mui/material'
-import { Link as RouterLink } from 'react-router-dom'
+import { Box } from '@mui/material'
+import { NavLink } from 'react-router-dom'
 
 export function NavLinks({ links }) {
   return (
     <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 'auto', gap: 4 }}>
       {links.map((link) => (
-        <Link
+        <NavLink
           key={link.label}
-          component={RouterLink}
           to={link.to}
-          underline="none"
-          color="text.primary"
-          className="hover:text-primary text-sm font-semibold"
+          end={link.end || false}
+          style={({ isActive }) => ({
+            position: 'relative',
+            fontWeight: 600,
+            color: isActive ? '#3625f4' : '#334155',
+          })}
+          className="!hover:text-primary transition-colors!"
         >
           {link.label}
-        </Link>
+        </NavLink>
       ))}
     </Box>
   )
