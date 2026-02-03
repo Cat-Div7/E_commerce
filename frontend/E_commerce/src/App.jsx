@@ -32,15 +32,43 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/auth',
-    element: <AuthLayout />,
-    children: [
-      { path: 'login', element: <Login /> },
-      { path: 'register', element: <Register /> },
-      { path: 'forgot-password', element: <ForgotPassword /> },
-      { path: 'reset-password', element: <ResetPassword /> },
-    ],
-  },
+  path: '/auth',
+  element: <AuthLayout />,
+  children: [
+    {
+      path: 'login',
+      element: (
+        <GuestRoute>
+          {/* <Login /> */}
+        </GuestRoute>
+      ),
+    },
+    {
+      path: 'register',
+      element: (
+        <GuestRoute>
+          {/* <Register /> */}
+        </GuestRoute>
+      ),
+    },
+    {
+      path: 'forgot-password',
+      element: (
+        <GuestRoute>
+          {/* <ForgotPassword /> */}
+        </GuestRoute>
+      ),
+    },
+    {
+      path: 'reset-password',
+      element: (
+        <GuestRoute>
+          {/* <ResetPassword /> */}
+        </GuestRoute>
+      ),
+    },
+  ],
+}
 ])
 
 function App() {
