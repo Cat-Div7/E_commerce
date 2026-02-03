@@ -8,7 +8,7 @@ import {
   Container,
   Link,
 } from '@mui/material'
-import { Logo } from '@components'
+import { Logo , NavLinks} from '@components'
 
 export function AuthNavbar({ showLogin, showRegister }) {
   const navLinks = [
@@ -31,20 +31,8 @@ export function AuthNavbar({ showLogin, showRegister }) {
         <Toolbar disableGutters sx={{ px: { xs: 2, md: 6 }, minHeight: 64 }}>
           {/* Logo */}
           <Logo />
-          {/* Center Links */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 'auto', gap: 4 }}>
-            {navLinks.map((link) => (
-              <Link
-                component={RouterLink}
-                to={link.to}
-                underline="none"
-                color="text.primary"
-                className="hover:text-primary text-sm font-semibold!"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </Box>
+          {/* Links */}
+          <NavLinks links={navLinks} />
 
           {/* Right Side */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, ml: 4 }}>
